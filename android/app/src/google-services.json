@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "962417236264",
+    "project_id": "fire-5582b",
+    "storage_bucket": "fire-5582b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962417236264:android:a43db720e57ee4a2ef981d",
+        "android_client_info": {
+          "package_name": "com.example.car_rental"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962417236264-ra6g20c2lvb266gm3insk217lvq3v95h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy71fJsrrFFIYr7wA_4f8qVPOKA9iMPYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962417236264-ra6g20c2lvb266gm3insk217lvq3v95h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962417236264:android:0b947ccf9deb28b5ef981d",
+        "android_client_info": {
+          "package_name": "com.example.untitled18"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "962417236264-ra6g20c2lvb266gm3insk217lvq3v95h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy71fJsrrFFIYr7wA_4f8qVPOKA9iMPYA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "962417236264-ra6g20c2lvb266gm3insk217lvq3v95h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

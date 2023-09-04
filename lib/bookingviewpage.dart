@@ -52,7 +52,7 @@ class _DataViewPageState extends State<DataViewPage> {
 
                 title: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text('Pickup Location: $pickupLocation'),
+                  child: Text('Pickup : $pickupLocation'),
                 ),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
