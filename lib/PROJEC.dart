@@ -93,7 +93,7 @@ class _PROJECState extends State<PROJEC> {
                     ),
                   ),
                   Text(
-                    "Rent_a_car                     ",
+                    "RENT A CAR                     ",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 25,
