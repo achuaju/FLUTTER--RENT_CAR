@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:untitled21/payment.dart';
+import 'package:RENT_A_CAR/payment.dart';
 
 import 'PROJECT.dart';
 import 'adding.dart';
