@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:RENT_A_CAR/payment.dart';
+import 'package:Rent_a_car/payment.dart';
 
 import 'book.dart';
 import 'constants.dart';
@@ -286,7 +286,7 @@ class _BookCarState extends State<BookCar> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "RENT A CAR",
+                  "Rent_a_car",
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.bold,

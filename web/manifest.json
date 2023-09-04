@@ -1,6 +1,6 @@
 {
-    "name": "RENT_A_CAR",
-    "short_name": "RENT_A_CAR",
+    "name": "Rent_a_car",
+    "short_name": "Rent_a_car",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
