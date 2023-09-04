@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DataViewPage extends StatefulWidget {
@@ -8,15 +7,26 @@ class DataViewPage extends StatefulWidget {
 }
 
 class _DataViewPageState extends State<DataViewPage> {
-
   // Firestore instance
   FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+  // Function to delete a booking
+  void _deleteBooking(String documentId) {
+    firestore.collection('bookings').doc(documentId).delete().then((_) {
+      // Booking deleted successfully
+      // You can add any additional logic here, such as showing a message.
+    }).catchError((error) {
+      // Handle errors if the deletion fails
+      // You can also show an error message here.
+      print("Error deleting booking: $error");
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('bookings'),
+        title: Text('Bookings'),
         backgroundColor: Colors.deepPurple,
       ),
       body: StreamBuilder(
@@ -32,7 +42,8 @@ class _DataViewPageState extends State<DataViewPage> {
           return ListView.builder(
             itemCount: documents.length,
             itemBuilder: (context, index) {
-              Map<String, dynamic> data = documents[index].data() as Map<String, dynamic>;
+              Map<String, dynamic> data =
+              documents[index].data() as Map<String, dynamic>;
 
               // Extract data from the document
               String pickupLocation = data['pickupLocation'];
@@ -40,16 +51,16 @@ class _DataViewPageState extends State<DataViewPage> {
               String timeSlot = data['selectedTimeSlot'];
               String endDate = data['endDate'];
               String riderName = data['numberOfRiders'];
-              String car= data['car'];
-
+              String car = data['car'];
 
               return ListTile(
                 shape: RoundedRectangleBorder(
                   side: BorderSide(width: 1),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                leading: CircleAvatar(backgroundColor: Colors.deepPurple,),
-
+                leading: CircleAvatar(
+                  backgroundColor: Colors.deepPurple,
+                ),
                 title: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text('Pickup : $pickupLocation'),
@@ -75,10 +86,27 @@ class _DataViewPageState extends State<DataViewPage> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text('name of car: $car'),
+                      child: Text('Name of Car: $car'),
                     ),
                   ],
                 ),
+                trailing: ElevatedButton.icon(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurple
+                  ),
+
+                  onPressed: () {
+
+                    // Call the delete function with the document ID
+                    _deleteBooking(documents[index].id);
+
+                  },
+                    icon: Icon(Icons.delete), label:Text("cancel booking"),
+
+
+                ),
+
+
               );
             },
           );
@@ -87,5 +115,3 @@ class _DataViewPageState extends State<DataViewPage> {
     );
   }
 }
-
-

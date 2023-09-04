@@ -6,6 +6,7 @@ import 'PROJECT.dart';
 import 'adding.dart';
 import 'available_cars.dart';
 import 'book_car.dart';
+import 'bookingviewpage.dart';
 import 'car_widget.dart';
 import 'constants.dart';
 import 'data.dart';
@@ -282,10 +283,10 @@ class _ShowroomState extends State<Showroom> {
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (BuildContext context) => CarListScree1()),
+                              MaterialPageRoute(builder: (BuildContext context) => DataViewPage()),
                             );
                           },
-                          child: Text("Book a car"),
+                          child: Text("Booking detilas"),
                           style: ElevatedButton.styleFrom(shape: StadiumBorder(),primary: Colors.deepPurple),
                         ),
                       ),
