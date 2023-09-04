@@ -13,6 +13,7 @@ class CarListScree extends StatelessWidget {
 
       body: CarList(),
       floatingActionButton: FloatingActionButton(
+
         onPressed: () {
           Navigator.push(
             context,
@@ -75,7 +76,8 @@ class CarList extends StatelessWidget {
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    ElevatedButton(
+                    ElevatedButton(style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple),
                       onPressed: () {
                         Navigator.push(
                           context,
@@ -94,7 +96,8 @@ class CarList extends StatelessWidget {
                     ),
                     SizedBox(width: 1
                     ,height: 1,),
-                    ElevatedButton(
+                    ElevatedButton( style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.deepPurple),
                       onPressed: () {
                         showDialog(
                           context: context,
@@ -109,7 +112,8 @@ class CarList extends StatelessWidget {
                                   },style: ElevatedButton.styleFrom(primary: Colors.deepPurple),
                                   child: Text('Cancel'),
                                 ),
-                                TextButton(
+                                TextButton(style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.deepPurple),
                                   onPressed: () {
                                     carsCollection.doc(carId).delete();
                                     Navigator.of(context).pop();

@@ -19,7 +19,7 @@ class _PROJECState extends State<PROJEC> {
   Future<void> login() async {
     try {
       UserCredential userCredential =
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
       );
@@ -59,20 +59,50 @@ class _PROJECState extends State<PROJEC> {
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.transparent,
-
-          body:  SingleChildScrollView(
+          body: SingleChildScrollView(
             child: Center(
-
-
-              child: Column(mainAxisAlignment: MainAxisAlignment.end,
-                children: [Text("READY TO GO ", style: TextStyle(color: Colors.white,fontSize: 50,),),
-                  Text("somewhere ", style: TextStyle(color: Colors.black,fontSize: 25,),),
-                  Text("   FEEL FREE TO", style: TextStyle(color: Colors.black,fontSize: 26,),),
-                  Text("          DRIVE", style: TextStyle(color: Colors.black,fontSize: 45,),),
-                  Text("RENT A CAR                     ", style: TextStyle(color: Colors.white,fontSize: 25,),),
-
-                  SizedBox(width: 190,
-                    height: 260,),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "READY TO GO ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 50,
+                    ),
+                  ),
+                  Text(
+                    "somewhere ",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                    ),
+                  ),
+                  Text(
+                    "   FEEL FREE TO",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 26,
+                    ),
+                  ),
+                  Text(
+                    "          DRIVE",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 45,
+                    ),
+                  ),
+                  Text(
+                    "RENT A CAR                     ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 190,
+                    height: 260,
+                  ),
                   SizedBox(
                     width: 300,
                     child: Padding(
@@ -85,7 +115,6 @@ class _PROJECState extends State<PROJEC> {
                           icon: Icon(Icons.email),
                           border: OutlineInputBorder(),
                           labelText: "Email",
-
                         ),
                       ),
                     ),
@@ -107,7 +136,6 @@ class _PROJECState extends State<PROJEC> {
                       ),
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
@@ -116,13 +144,10 @@ class _PROJECState extends State<PROJEC> {
                       child: ElevatedButton(
                         onPressed: login,
                         child: Text("Login"),
-                        style: ElevatedButton.styleFrom(shape: StadiumBorder(),primary: Colors.black),
+                        style: ElevatedButton.styleFrom(
+                            shape: StadiumBorder(), primary: Colors.black),
                       ),
-
-
                     ),
-
-
                   ),
                   Padding(
                     padding: const EdgeInsets.all(15.0),
@@ -130,31 +155,35 @@ class _PROJECState extends State<PROJEC> {
                       width: 200,
                       height: 30,
                       child: ElevatedButton(
-
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (BuildContext context) => PROJECT()),
+                            MaterialPageRoute(
+                                builder: (BuildContext context) => PROJECT()),
                           );
                         },
                         child: Text("Register"),
-                        style: ElevatedButton.styleFrom(shape: StadiumBorder(),primary: Colors.black),
+                        style: ElevatedButton.styleFrom(
+                            shape: StadiumBorder(), primary: Colors.black),
                       ),
                     ),
                   ),
-
                   SizedBox(height: 5.0),
                   SizedBox(height: 5.0),
-                  TextButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext) =>
-                        Manage()),
-                    );
-                  },
-                      child: Text(" sign up managing",style: TextStyle(color: Colors.black),)),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext) => Manage()),
+                        );
+                      },
+                      child: Text(
+                        " sign up managing",
+                        style: TextStyle(color: Colors.black),
+                      )),
                 ],
-
               ),
-
             ),
           ),
         ),

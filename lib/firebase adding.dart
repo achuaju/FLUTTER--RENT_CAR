@@ -66,7 +66,8 @@ class CarList extends StatelessWidget {
                         builder: (BuildContext context) => BookingPage(),
                       ),
                     );
-                  },style: ElevatedButton.styleFrom(primary: Colors.deepPurple),
+                  },
+                  style: ElevatedButton.styleFrom(primary: Colors.deepPurple),
                   child: Text('Booking'),
                 ),
               ),

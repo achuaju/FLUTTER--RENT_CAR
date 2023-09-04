@@ -3,8 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'bookingpayment.dart';
 
-
-
 class BookingPage extends StatefulWidget {
   @override
   _BookingPageState createState() => _BookingPageState();
@@ -19,6 +17,7 @@ class _BookingPageState extends State<BookingPage> {
   String endDate = '';
   String numberOfRiders = '';
   String car = '';
+
   void _addBookingToFirestore() async {
     try {
       await firestore.collection('bookings').add({
@@ -27,7 +26,7 @@ class _BookingPageState extends State<BookingPage> {
         'selectedTimeSlot': selectedTimeSlot,
         'endDate': endDate,
         'numberOfRiders': numberOfRiders,
-        "car":car,
+        "car": car,
       });
 
       setState(() {
@@ -36,7 +35,7 @@ class _BookingPageState extends State<BookingPage> {
         selectedTimeSlot = '';
         endDate = '';
         numberOfRiders = '';
-        car='';
+        car = '';
       });
 
       ScaffoldMessenger.of(context).showSnackBar(
@@ -45,6 +44,7 @@ class _BookingPageState extends State<BookingPage> {
     } catch (e) {
       print('Error adding booking: $e');
     }
+
   }
 
   Future<void> _selectDate(BuildContext context) async {
@@ -72,7 +72,6 @@ class _BookingPageState extends State<BookingPage> {
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: ListView(
-
           children: [
             TextField(
               decoration: InputDecoration(labelText: 'Pickup Location'),
@@ -107,7 +106,6 @@ class _BookingPageState extends State<BookingPage> {
             ),
             TextField(
               decoration: InputDecoration(labelText: 'Name of Riders'),
-
               onChanged: (value) {
                 setState(() {
                   numberOfRiders = value;
@@ -116,7 +114,6 @@ class _BookingPageState extends State<BookingPage> {
             ),
             TextField(
               decoration: InputDecoration(labelText: 'Name of car'),
-
               onChanged: (value) {
                 setState(() {
                   car = value;
@@ -125,22 +122,17 @@ class _BookingPageState extends State<BookingPage> {
             ),
             SizedBox(height: 16.0),
             ElevatedButton(
-              onPressed:() {
+              onPressed: () {
                 _addBookingToFirestore();
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (BuildContext context) => BookingPage2(),
-
                   ),
                 );
-
-
-
-
-              }, child:Text('Book Now') ,
+              },
+              child: Text('Book Now'),
               style: ElevatedButton.styleFrom(primary: Colors.deepPurple),
-
             ),
           ],
         ),

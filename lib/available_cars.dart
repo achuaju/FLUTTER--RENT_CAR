@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -14,9 +13,7 @@ class AvailableCars extends StatefulWidget {
   _AvailableCarsState createState() => _AvailableCarsState();
 }
 
-
 class _AvailableCarsState extends State<AvailableCars> {
-
   List<Filter> filters = getFilterList();
   late Filter selectedFilter;
 
@@ -39,7 +36,6 @@ class _AvailableCarsState extends State<AvailableCars> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               GestureDetector(
                 onTap: () {
                   Navigator.pop(context);
@@ -61,14 +57,11 @@ class _AvailableCarsState extends State<AvailableCars> {
                       Icons.keyboard_arrow_left,
                       color: Colors.black,
                       size: 28,
-                    )
-                ),
+                    )),
               ),
-
               SizedBox(
                 height: 16,
               ),
-
               Text(
                 "Available Cars (" + getCarList().length.toString() + ")",
                 style: TextStyle(
@@ -77,11 +70,9 @@ class _AvailableCarsState extends State<AvailableCars> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
               SizedBox(
                 height: 16,
               ),
-
               Expanded(
                 child: GridView.count(
                   physics: BouncingScrollPhysics(),
@@ -94,15 +85,14 @@ class _AvailableCarsState extends State<AvailableCars> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => BookCar(car: item)),
+                            MaterialPageRoute(
+                                builder: (context) => BookCar(car: item)),
                           );
                         },
-                        child: buildCar(item, 0)
-                    );
+                        child: buildCar(item, 0));
                   }).toList(),
                 ),
               ),
-
             ],
           ),
         ),
@@ -124,7 +114,7 @@ class _AvailableCarsState extends State<AvailableCars> {
     );
   }
 
-  Widget buildFilterIcon(){
+  Widget buildFilterIcon() {
     return Container(
       width: 50,
       height: 50,
@@ -145,7 +135,7 @@ class _AvailableCarsState extends State<AvailableCars> {
     );
   }
 
-  List<Widget> buildFilters(){
+  List<Widget> buildFilters() {
     List<Widget> list = [];
     for (var i = 0; i < filters.length; i++) {
       list.add(buildFilter(filters[i]));
@@ -153,7 +143,7 @@ class _AvailableCarsState extends State<AvailableCars> {
     return list;
   }
 
-  Widget buildFilter(Filter filter){
+  Widget buildFilter(Filter filter) {
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -167,7 +157,8 @@ class _AvailableCarsState extends State<AvailableCars> {
           style: TextStyle(
             color: selectedFilter == filter ? kPrimaryColor : Colors.grey[300],
             fontSize: 16,
-            fontWeight: selectedFilter == filter ? FontWeight.bold : FontWeight.normal,
+            fontWeight:
+                selectedFilter == filter ? FontWeight.bold : FontWeight.normal,
           ),
         ),
       ),

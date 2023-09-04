@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-
 import 'data.dart';
 
-Widget buildDealer(Dealer dealer, int index){
+Widget buildDealer(Dealer dealer, int index) {
   return Container(
     decoration: BoxDecoration(
       color: Colors.white,
@@ -17,7 +16,6 @@ Widget buildDealer(Dealer dealer, int index){
     child: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
-
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -31,11 +29,9 @@ Widget buildDealer(Dealer dealer, int index){
           height: 60,
           width: 60,
         ),
-
         SizedBox(
           height: 16,
         ),
-
         Text(
           dealer.name,
           style: TextStyle(
@@ -44,7 +40,6 @@ Widget buildDealer(Dealer dealer, int index){
             height: 1,
           ),
         ),
-
         Text(
           dealer.offers.toString() + " offers",
           style: TextStyle(
@@ -52,7 +47,6 @@ Widget buildDealer(Dealer dealer, int index){
             color: Colors.grey,
           ),
         ),
-
       ],
     ),
   );

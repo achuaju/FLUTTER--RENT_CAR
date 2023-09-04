@@ -26,8 +26,8 @@ class _PROJECTState extends State<PROJECT> {
 
   Future<void> authenticate() async {
     try {
-      UserCredential userCredential = await FirebaseAuth.instance
-          .createUserWithEmailAndPassword(
+      UserCredential userCredential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: cnamecnt.text,
         password: dnamecnt.text,
       );
@@ -63,7 +63,6 @@ class _PROJECTState extends State<PROJECT> {
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.transparent,
-
           body: Center(
             child: Column(
               children: [
@@ -139,7 +138,8 @@ class _PROJECTState extends State<PROJECT> {
                     child: ElevatedButton(
                       onPressed: authenticate,
                       child: Text("Save"),
-                      style: ElevatedButton.styleFrom(shape: StadiumBorder(),primary: Colors.transparent),
+                      style: ElevatedButton.styleFrom(
+                          shape: StadiumBorder(), primary: Colors.transparent),
                     ),
                   ),
                 ),
@@ -158,7 +158,8 @@ class _PROJECTState extends State<PROJECT> {
                         );
                       },
                       child: Text("Login"),
-                      style: ElevatedButton.styleFrom(shape: StadiumBorder(),primary: Colors.black),
+                      style: ElevatedButton.styleFrom(
+                          shape: StadiumBorder(), primary: Colors.black),
                     ),
                   ),
                 )

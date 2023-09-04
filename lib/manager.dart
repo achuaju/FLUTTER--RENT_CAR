@@ -6,9 +6,10 @@ import 'edite.dart';
 import 'showroom.dart';
 
 import 'carscreen.dart';
+
 class Manage extends StatefulWidget {
   @override
-  State<Manage> createState() => _Manage();//hi
+  State<Manage> createState() => _Manage(); //hi
 }
 
 class _Manage extends State<Manage> {
@@ -21,7 +22,7 @@ class _Manage extends State<Manage> {
   Future<void> login() async {
     try {
       UserCredential userCredential =
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailController.text,
         password: passwordController.text,
       );
@@ -61,20 +62,50 @@ class _Manage extends State<Manage> {
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.transparent,
-
-          body:  SingleChildScrollView(
+          body: SingleChildScrollView(
             child: Center(
-
-
-              child: Column(mainAxisAlignment: MainAxisAlignment.end,
-                children: [Text("READY TO GO ", style: TextStyle(color: Colors.white,fontSize: 50,),),
-                  Text("somewhere ", style: TextStyle(color: Colors.black,fontSize: 25,),),
-                  Text("   FEEL FREE TO", style: TextStyle(color: Colors.black,fontSize: 26,),),
-                  Text("          DRIVE", style: TextStyle(color: Colors.black,fontSize: 45,),),
-                  Text("RENT A CAR                     ", style: TextStyle(color: Colors.white,fontSize: 25,),),
-
-                  SizedBox(width: 190,
-                    height: 200,),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "READY TO GO ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 50,
+                    ),
+                  ),
+                  Text(
+                    "somewhere ",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 25,
+                    ),
+                  ),
+                  Text(
+                    "   FEEL FREE TO",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 26,
+                    ),
+                  ),
+                  Text(
+                    "          DRIVE",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 45,
+                    ),
+                  ),
+                  Text(
+                    "RENT A CAR                     ",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 190,
+                    height: 200,
+                  ),
                   SizedBox(
                     width: 300,
                     child: Padding(
@@ -108,7 +139,6 @@ class _Manage extends State<Manage> {
                       ),
                     ),
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: SizedBox(
@@ -117,19 +147,13 @@ class _Manage extends State<Manage> {
                       child: ElevatedButton(
                         onPressed: login,
                         child: Text("Login"),
-                        style: ElevatedButton.styleFrom(shape: StadiumBorder(),primary: Colors.black),
+                        style: ElevatedButton.styleFrom(
+                            shape: StadiumBorder(), primary: Colors.black),
                       ),
-
-
                     ),
-
-
                   ),
-
                 ],
-
               ),
-
             ),
           ),
         ),

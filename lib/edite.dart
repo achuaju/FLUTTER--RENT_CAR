@@ -34,6 +34,7 @@ class _TextFieldPageState extends State<TextFieldPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: Text('Add Car Details'),
       ),
       body: Padding(
@@ -59,28 +60,31 @@ class _TextFieldPageState extends State<TextFieldPage> {
               decoration: InputDecoration(labelText: 'Condition'),
             ),
             ElevatedButton(
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
               onPressed: () {
                 pickImage(); // Call this method to pick an image
               },
               child: Text('Pick Image'),
             ),
             ElevatedButton(
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
               onPressed: () {
                 saveCarData();
               },
               child: Text('Save Car'),
             ),
             ElevatedButton.icon(
+              style:
+                  ElevatedButton.styleFrom(backgroundColor: Colors.deepPurple),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => DataViewPage()),
-
                 );
-
               },
               icon: Icon(Icons.verified),
-
               label: Text("bookings"),
             ),
           ],
@@ -117,8 +121,9 @@ class _TextFieldPageState extends State<TextFieldPage> {
   }
 
   Future<String> uploadImage(String imagePath) async {
-    Reference storageReference =
-    FirebaseStorage.instance.ref().child('car_images/${DateTime.now()}.png');
+    Reference storageReference = FirebaseStorage.instance
+        .ref()
+        .child('car_images/${DateTime.now()}.png');
 
     UploadTask uploadTask = storageReference.putFile(File(imagePath));
 
@@ -129,5 +134,3 @@ class _TextFieldPageState extends State<TextFieldPage> {
     return imageUrl;
   }
 }
-
-

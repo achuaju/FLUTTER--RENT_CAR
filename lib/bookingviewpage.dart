@@ -43,7 +43,7 @@ class _DataViewPageState extends State<DataViewPage> {
             itemCount: documents.length,
             itemBuilder: (context, index) {
               Map<String, dynamic> data =
-              documents[index].data() as Map<String, dynamic>;
+                  documents[index].data() as Map<String, dynamic>;
 
               // Extract data from the document
               String pickupLocation = data['pickupLocation'];
@@ -92,21 +92,14 @@ class _DataViewPageState extends State<DataViewPage> {
                 ),
                 trailing: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.deepPurple
-                  ),
-
+                      backgroundColor: Colors.deepPurple),
                   onPressed: () {
-
                     // Call the delete function with the document ID
                     _deleteBooking(documents[index].id);
-
                   },
-                    icon: Icon(Icons.delete), label:Text("cancel booking"),
-
-
+                  icon: Icon(Icons.delete),
+                  label: Text("cancel booking"),
                 ),
-
-
               );
             },
           );

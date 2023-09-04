@@ -3,14 +3,12 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 class NavigationItem {
-
   IconData iconData;
 
   NavigationItem(this.iconData);
-
 }
 
-List<NavigationItem> getNavigationItemList(){
+List<NavigationItem> getNavigationItemList() {
   return <NavigationItem>[
     NavigationItem(Icons.home),
     NavigationItem(Icons.calendar_today),
@@ -20,7 +18,6 @@ List<NavigationItem> getNavigationItemList(){
 }
 
 class Car {
-
   String brand;
   String model;
   double price;
@@ -28,10 +25,11 @@ class Car {
   List<String> images;
 
   Car(this.brand, this.model, this.price, this.condition, this.images);
-CollectionReference cars=FirebaseFirestore.instance.collection("cars");
+
+  CollectionReference cars = FirebaseFirestore.instance.collection("cars");
 }
 
-List<Car> getCarList(){
+List<Car> getCarList() {
   return <Car>[
     Car(
       "Toyota",
@@ -73,7 +71,6 @@ List<Car> getCarList(){
       [
         "assets/images/creta.png",
         "assets/images/hu.png",
-
       ],
     ),
     Car(
@@ -83,7 +80,6 @@ List<Car> getCarList(){
       "Weekly",
       [
         "assets/images/thar.png",
-
       ],
     ),
     Car(
@@ -93,8 +89,6 @@ List<Car> getCarList(){
       "Weekly",
       [
         "assets/images/Jimny.png",
-
-
       ],
     ),
     Car(
@@ -105,7 +99,6 @@ List<Car> getCarList(){
       [
         "assets/images/2.png",
         "assets/images/in.png",
-
       ],
     ),
     Car(
@@ -116,30 +109,20 @@ List<Car> getCarList(){
       [
         "assets/images/city.png",
         "assets/images/city2.png",
-
       ],
     ),
-
-
-
   ];
 }
 
-
-
-
 class Dealer {
-
   String name;
   int offers;
   String image;
 
-
   Dealer(this.name, this.offers, this.image);
-
 }
 
-List<Dealer> getDealerList(){
+List<Dealer> getDealerList() {
   return <Dealer>[
     Dealer(
       "Hertz",
@@ -160,14 +143,12 @@ List<Dealer> getDealerList(){
 }
 
 class Filter {
-
   String name;
 
   Filter(this.name);
-
 }
 
-List<Filter> getFilterList(){
+List<Filter> getFilterList() {
   return <Filter>[
     Filter(""),
     Filter(""),

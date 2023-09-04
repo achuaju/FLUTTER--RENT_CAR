@@ -11,9 +11,7 @@ class Booking extends StatefulWidget {
 }
 
 class _Booking extends State<Booking> {
-
   CollectionReference fire = FirebaseFirestore.instance.collection('booking');
-
 
   void add() async {
     await fire.add({
@@ -21,25 +19,31 @@ class _Booking extends State<Booking> {
       "your age": banamecnt.text,
       "Mobile Number": dnamecnt.text,
       "Select your city": cnamecnt.text,
-      "Save booking":gnamecnt,
+      "Save booking": gnamecnt,
     }).then((value) {
       print("Data added");
     });
   }
-
-
-
 
   var anamecnt = TextEditingController();
   var banamecnt = TextEditingController();
   var cnamecnt = TextEditingController();
   var dnamecnt = TextEditingController();
   var enamecnt = TextEditingController();
-  var fnamecnt =TextEditingController();
-  var gnamecnt =TextEditingController();
-final _carList=["fortuner","swift","innova","city","civic","jimny","thar"];
+  var fnamecnt = TextEditingController();
+  var gnamecnt = TextEditingController();
+  final _carList = [
+    "fortuner",
+    "swift",
+    "innova",
+    "city",
+    "civic",
+    "jimny",
+    "thar"
+  ];
 
-String? _selectedval="";
+  String? _selectedval = "";
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -52,7 +56,6 @@ String? _selectedval="";
       child: SafeArea(
         child: Scaffold(
           backgroundColor: Colors.transparent,
-
           body: Center(
             child: Column(
               children: [
@@ -119,17 +122,19 @@ String? _selectedval="";
                 SizedBox(
                   width: 300,
                   child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child:DropdownButtonFormField(decoration:InputDecoration(
-                      enabledBorder: OutlineInputBorder(),
-                    ),
-                        items: _carList.map((e)=>
-
-                       DropdownMenuItem(child: Text(e),value: e,)
-
-                    ).toList(),
-                    onChanged: (val){},)
-                  ),
+                      padding: const EdgeInsets.all(15.0),
+                      child: DropdownButtonFormField(
+                        decoration: InputDecoration(
+                          enabledBorder: OutlineInputBorder(),
+                        ),
+                        items: _carList
+                            .map((e) => DropdownMenuItem(
+                                  child: Text(e),
+                                  value: e,
+                                ))
+                            .toList(),
+                        onChanged: (val) {},
+                      )),
                 ),
                 SizedBox(
                   width: 300,
@@ -152,11 +157,12 @@ String? _selectedval="";
                     width: 200,
                     height: 30,
                     child: ElevatedButton(
-                      onPressed:(){
+                      onPressed: () {
                         add();
                       },
                       child: Text("Save booking"),
-                      style: ElevatedButton.styleFrom(shape: StadiumBorder(),primary: Colors.transparent),
+                      style: ElevatedButton.styleFrom(
+                          shape: StadiumBorder(), primary: Colors.transparent),
                     ),
                   ),
                 ),
@@ -175,7 +181,8 @@ String? _selectedval="";
                         );
                       },
                       child: Text("payment"),
-                      style: ElevatedButton.styleFrom(shape: StadiumBorder(),primary: Colors.black),
+                      style: ElevatedButton.styleFrom(
+                          shape: StadiumBorder(), primary: Colors.black),
                     ),
                   ),
                 )

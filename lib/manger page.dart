@@ -4,21 +4,20 @@ import 'package:image_picker/image_picker.dart';
 import 'data.dart';
 
 class CarListScreen extends StatefulWidget {
-@override
-_CarListScreenState createState() => _CarListScreenState();
+  @override
+  _CarListScreenState createState() => _CarListScreenState();
 }
 
 class _CarListScreenState extends State<CarListScreen> {
   List<Car> carList = getCarList();
 
-  void addNewCar(String brand, String model, double price, String condition, List<String> images) {
+  void addNewCar(String brand, String model, double price, String condition,
+      List<String> images) {
     Car newCar = Car(brand, model, price, condition, images);
     setState(() {
       carList.add(newCar);
     });
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +48,6 @@ class _CarListScreenState extends State<CarListScreen> {
 }
 
 class AddCarScreen extends StatefulWidget {
-
   final Function addNewCar;
 
   AddCarScreen(this.addNewCar);
@@ -106,7 +104,8 @@ class _AddCarScreenState extends State<AddCarScreen> {
             ),
             TextField(
               controller: imagesController,
-              decoration: InputDecoration(labelText: 'Images (comma-separated)'),
+              decoration:
+                  InputDecoration(labelText: 'Images (comma-separated)'),
             ),
             SizedBox(height: 16),
             ElevatedButton(

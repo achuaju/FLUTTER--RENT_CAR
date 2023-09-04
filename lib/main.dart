@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled21/polo.dart';
+
 import 'package:untitled21/showroom.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -7,10 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 
 
 import 'PROJEC.dart';
-import 'Toyota.dart';
-import 'UI.dart';
-import 'foodpie.dart';
-import 'vehicle1.dart';
+
 
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();

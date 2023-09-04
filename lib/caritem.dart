@@ -77,14 +77,14 @@ class _ProductFormState extends State<ProductForm> {
               SizedBox(height: 16.0),
               _image == null
                   ? ElevatedButton(
-                onPressed: _uploadImage,
-                child: Text('Upload Image'),
-              )
+                      onPressed: _uploadImage,
+                      child: Text('Upload Image'),
+                    )
                   : Image.file(
-                _image!,
-                height: 200.0,
-                width: 200.0,
-              ),
+                      _image!,
+                      height: 200.0,
+                      width: 200.0,
+                    ),
               SizedBox(height: 16.0),
               ElevatedButton(
                 onPressed: _saveToFirestore,
