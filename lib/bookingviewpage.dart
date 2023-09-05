@@ -98,7 +98,7 @@ class _DataViewPageState extends State<DataViewPage> {
                     // Call the delete function with the document ID
                     _deleteBooking(documents[index].id);
                   },
-                  icon: Icon(Icons.delete),
+                  icon: Icon(Icons.cancel_schedule_send),
                   label: Text("cancel booking"),
                 ),
               );
