@@ -55,15 +55,16 @@ class _DataViewPageState extends State<DataViewPage> {
 
               return ListTile(
                 shape: RoundedRectangleBorder(
-                  side: BorderSide(width: 1),
+                  side: BorderSide(width: 0.1),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 leading: CircleAvatar(
                   backgroundColor: Colors.deepPurple,
+                  backgroundImage: NetworkImage("https://firebasestorage.googleapis.com/v0/b/fire-5582b.appspot.com/o/car_images%2F2023-08-21%2022%3A21%3A01.691905.png?alt=media&token=07bf9483-91dc-4be9-a6f7-e168a78111eb"),
                 ),
                 title: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text('Pickup : $pickupLocation'),
+                  child: Text('Pickup Location: $pickupLocation'),
                 ),
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
